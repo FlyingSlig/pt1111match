@@ -192,4 +192,7 @@ including the negative results, which are listed so they are not retried.
 * The decompiled sources here are derived from a copyrighted work and are
   provided for **research, preservation and interoperability** purposes only.
   You must own a copy of the game to use them.
+* The **tooling** (`tools/`, build files, documentation) is MIT licensed — see
+  [`LICENSE`](LICENSE). That license does not extend to the game-derived
+  material (`src/`, `ghidra/export/`).
 * "Portugal 1111" and related marks belong to their respective owners.
