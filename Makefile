@@ -66,6 +66,10 @@ runtime: $(OUT)
 stubs:
 	$(PYTHON) tools/gen_stubs.py
 
+# Verify toolchain / python / original-binary prerequisites.
+check:
+	tools/check_env.sh
+
 # Rebuild the resource object from rsrc/Port1111.rc (Phase 4).
 rsrc:
 	. tools/msvc-env.sh && cd rsrc && wine "$$VC7/bin/rc.exe" Port1111.rc && (mv -f Port1111.RES Port1111.res 2>/dev/null || true)
@@ -77,4 +81,4 @@ match: $(OUT)
 clean:
 	rm -rf $(BUILD) build/Port1111.pdb build/Port1111.exe.map
 
-.PHONY: all match clean stubs rsrc
+.PHONY: all match clean stubs rsrc check

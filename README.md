@@ -152,11 +152,15 @@ tools/match.sh       # reccmp report -> build/match.json + console summary
 tools/bincmp.py "$PT1111_ORIG" build/Port1111.exe   # raw section byte diff
 ```
 
+`make check` (or `tools/check_env.sh`) verifies the toolchain, python modules
+and the original binary before you start.
+
 Useful targets / flags:
 
 | command | effect |
 |---|---|
 | `make stubs` | regenerate the STUB skeleton (`src/0098_stubs_all.cpp`) |
+| `make check` | verify toolchain / python / original-binary prerequisites |
 | `make rsrc` | rebuild `rsrc/Port1111.res` with rc 7.1 |
 | `make runtime` | runtime-test variant (re-targets raw branches; scores worse) |
 | `make PYTHON=.venv/bin/python` | run the tool pipeline from the venv |
