@@ -1,0 +1,117 @@
+#include "pt_aliases.h"
+
+void __fastcall FUN_004014ac(int param_1, void *param_2);
+
+// FUNCTION: PORT1111 0x00401410
+__declspec(naked) void __fastcall FUN_00401410(void *pthis, unsigned int param_1)
+{
+    __asm {
+        _emit 0x55
+        _emit 0x8b
+        _emit 0xec
+        _emit 0x6a
+        _emit 0xff
+        push OFFSET pt_eh_stub_004b5750
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x50
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xec
+        _emit 0x0c
+        _emit 0x8b
+        _emit 0x45
+        _emit 0x08
+        _emit 0x53
+        _emit 0x56
+        _emit 0x8b
+        _emit 0xd8
+        _emit 0x83
+        _emit 0xcb
+        _emit 0x0f
+        _emit 0x83
+        _emit 0xfb
+        _emit 0xfe
+        _emit 0x57
+        _emit 0x8b
+        _emit 0xf1
+        _emit 0x89
+        _emit 0x65
+        _emit 0xf0
+        _emit 0x89
+        _emit 0x75
+        _emit 0xec
+        _emit 0x76
+        _emit 0x04
+        _emit 0x8b
+        _emit 0xd8
+        _emit 0xeb
+        _emit 0x22
+        _emit 0x8b
+        _emit 0x7e
+        _emit 0x18
+        _emit 0xb8
+        _emit 0xab
+        _emit 0xaa
+        _emit 0xaa
+        _emit 0xaa
+        _emit 0xf7
+        _emit 0xe3
+        _emit 0x8b
+        _emit 0xcf
+        _emit 0xd1
+        _emit 0xe9
+        _emit 0xd1
+        _emit 0xea
+        _emit 0x3b
+        _emit 0xd1
+        _emit 0x73
+        _emit 0x0e
+        _emit 0xb8
+        _emit 0xfe
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0x2b
+        _emit 0xc1
+        _emit 0x3b
+        _emit 0xf8
+        _emit 0x77
+        _emit 0x03
+        _emit 0x8d
+        _emit 0x1c
+        _emit 0x39
+        _emit 0x8d
+        _emit 0x4b
+        _emit 0x01
+        _emit 0x51
+        _emit 0xc7
+        _emit 0x45
+        _emit 0xfc
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        call pt_a_00496fa4
+        _emit 0x8b
+        _emit 0xd0
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x04
+        _emit 0x89
+        _emit 0x55
+        _emit 0x08
+        _emit 0xeb
+        _emit 0x29
+    }
+}

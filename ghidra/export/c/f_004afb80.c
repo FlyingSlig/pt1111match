@@ -1,0 +1,77 @@
+// FUNCTION: PORT1111 0x004afb80
+// name: FUN_004afb80
+// sig: undefined FUN_004afb80(int * param_1, undefined1 * param_2)
+
+
+void __cdecl FUN_004afb80(int *param_1,undefined1 *param_2)
+
+{
+  undefined1 *puVar1;
+  int iVar2;
+  
+  if ((char)param_1[2] == '\x06') {
+    iVar2 = *param_1;
+    if (*(char *)((int)param_1 + 9) == '\b') {
+      puVar1 = param_2;
+      if (iVar2 != 0) {
+        do {
+          *param_2 = *puVar1;
+          param_2[1] = puVar1[1];
+          param_2[2] = puVar1[2];
+          param_2[3] = -1 - puVar1[3];
+          param_2 = param_2 + 4;
+          iVar2 = iVar2 + -1;
+          puVar1 = puVar1 + 4;
+        } while (iVar2 != 0);
+        return;
+      }
+    }
+    else {
+      puVar1 = param_2;
+      if (iVar2 != 0) {
+        do {
+          *param_2 = *puVar1;
+          param_2[1] = puVar1[1];
+          param_2[2] = puVar1[2];
+          param_2[3] = puVar1[3];
+          param_2[4] = puVar1[4];
+          param_2[5] = puVar1[5];
+          param_2[6] = -1 - puVar1[6];
+          param_2[7] = -1 - puVar1[7];
+          param_2 = param_2 + 8;
+          iVar2 = iVar2 + -1;
+          puVar1 = puVar1 + 8;
+        } while (iVar2 != 0);
+        return;
+      }
+    }
+  }
+  else if ((char)param_1[2] == '\x04') {
+    iVar2 = *param_1;
+    puVar1 = param_2;
+    if (*(char *)((int)param_1 + 9) == '\b') {
+      if (iVar2 != 0) {
+        do {
+          *param_2 = *puVar1;
+          param_2[1] = -1 - puVar1[1];
+          param_2 = param_2 + 2;
+          iVar2 = iVar2 + -1;
+          puVar1 = puVar1 + 2;
+        } while (iVar2 != 0);
+        return;
+      }
+    }
+    else {
+      for (; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *param_2 = *puVar1;
+        param_2[1] = puVar1[1];
+        param_2[2] = -1 - puVar1[2];
+        param_2[3] = -1 - puVar1[3];
+        param_2 = param_2 + 4;
+        puVar1 = puVar1 + 4;
+      }
+    }
+  }
+  return;
+}
+

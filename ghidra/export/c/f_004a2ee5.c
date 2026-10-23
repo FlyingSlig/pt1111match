@@ -1,0 +1,44 @@
+// FUNCTION: PORT1111 0x004a2ee5
+// name: __lock_fhandle
+// sig: int __lock_fhandle(int _Filehandle)
+
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    __lock_fhandle
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl __lock_fhandle(int _Filehandle)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined1 local_14 [8];
+  undefined4 uStack_c;
+  undefined *local_8;
+  
+  local_8 = &DAT_004c8330;
+  uStack_c = 0x4a2ef1;
+  iVar1 = (&DAT_004e3440)[_Filehandle >> 5] + (_Filehandle & 0x1fU) * 0x24;
+  if (*(int *)(iVar1 + 8) == 0) {
+    __lock(10);
+    local_8 = (undefined *)0x0;
+    if (*(int *)(iVar1 + 8) == 0) {
+      iVar2 = ___crtInitCritSecAndSpinCount(iVar1 + 0xc,4000);
+      if (iVar2 == 0) {
+        __local_unwind2((int)local_14,-1);
+        return 0;
+      }
+      *(int *)(iVar1 + 8) = *(int *)(iVar1 + 8) + 1;
+    }
+    local_8 = (undefined *)0xffffffff;
+    FUN_004a2f7c();
+  }
+  EnterCriticalSection
+            ((LPCRITICAL_SECTION)
+             ((&DAT_004e3440)[_Filehandle >> 5] + 0xc + (_Filehandle & 0x1fU) * 0x24));
+  return 1;
+}
+

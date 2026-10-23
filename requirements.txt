@@ -1,0 +1,21 @@
+# Python tooling for pt1111match.
+#
+# Build-time tools (tools/*.py) are plain scripts run with `python3`;
+# reccmp is used by tools/match.sh (usually from .venv/).
+#
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements.txt
+#
+# Then either use .venv/bin/python for the tools as well
+#
+#   make PYTHON=$PWD/.venv/bin/python
+#
+# or install the build-time packages for the system interpreter.
+
+capstone>=5.0
+pefile>=2023.2.7
+reccmp==0.1.7
+
+# Optional: only if you regenerate ghidra/export/ from the original binary.
+# pyghidra>=3.1
+# jpype1>=1.5

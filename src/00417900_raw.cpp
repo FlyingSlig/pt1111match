@@ -1,0 +1,473 @@
+#include "pt1111_funcs.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include <math.h>
+#include <mbstring.h>
+#include <ddraw.h>
+#include <dsound.h>
+#include "pt_aliases.h"
+
+extern int DAT_004e0af4;
+extern unsigned char DAT_004e2424[];
+extern unsigned char DAT_004e0b04[4];
+extern unsigned char DAT_004e0b08[4];
+extern unsigned char DAT_004e0b0c[4];
+extern unsigned char DAT_004e0b00[4];
+extern unsigned char DAT_004e26fc[4];
+extern const unsigned char PTR_GetAsyncKeyState_004bc2dc[4];
+extern unsigned char DAT_004e086c[4];
+extern unsigned char DAT_004e2414[4];
+extern unsigned char DAT_004e26f0[4];
+extern const unsigned char s_Nenhuma_regra__004bef78[16];
+extern const unsigned char PTR_FUN_004bef74[4];
+
+
+
+
+// FUNCTION: PORT1111 0x00417900
+__declspec(naked) int __fastcall FUN_00417900(void *pthis,unsigned int param_1,int param_2)
+{
+    __asm {
+        _emit 0x6a
+        _emit 0xff
+        push OFFSET pt_eh_stub_004b64c8
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x50
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x51
+        _emit 0x8b
+        _emit 0x44
+        _emit 0x24
+        _emit 0x18
+        _emit 0x56
+        _emit 0x57
+        _emit 0x8b
+        _emit 0x7c
+        _emit 0x24
+        _emit 0x1c
+        _emit 0x8b
+        _emit 0xf1
+        _emit 0x50
+        _emit 0x57
+        _emit 0x8d
+        _emit 0x8e
+        _emit 0x04
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x89
+        _emit 0x74
+        _emit 0x24
+        _emit 0x10
+        call FUN_00454850
+        _emit 0x85
+        _emit 0xc0
+        _emit 0x0f
+        _emit 0x85
+        _emit 0xed
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x47
+        _emit 0xe5
+        _emit 0x83
+        _emit 0xf8
+        _emit 0x38
+        _emit 0x0f
+        _emit 0x87
+        _emit 0xbc
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        movzx ecx, byte ptr [eax + gap_00417b40 + 20]
+        jmp dword ptr [ecx*4 + gap_00417b40]
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x74
+        _emit 0x85
+        _emit 0xc9
+        _emit 0x0f
+        _emit 0x84
+        _emit 0xc8
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x11
+        _emit 0xff
+        _emit 0x52
+        _emit 0x08
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x74
+        _emit 0x85
+        _emit 0xc9
+        _emit 0x74
+        _emit 0x07
+        _emit 0x8b
+        _emit 0x01
+        _emit 0x6a
+        _emit 0x01
+        _emit 0xff
+        _emit 0x50
+        _emit 0x30
+        _emit 0xc7
+        _emit 0x46
+        _emit 0x74
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xe9
+        _emit 0xa9
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0xce
+        call FUN_004177c0
+        _emit 0xe9
+        _emit 0x9d
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        mov esi, dword ptr [GetAsyncKeyState]
+        _emit 0x53
+        _emit 0x55
+        _emit 0x6a
+        _emit 0x26
+        _emit 0xff
+        _emit 0xd6
+        _emit 0x6a
+        _emit 0x28
+        _emit 0x8b
+        _emit 0xf8
+        _emit 0xff
+        _emit 0xd6
+        _emit 0x6a
+        _emit 0x25
+        _emit 0x8b
+        _emit 0xd8
+        _emit 0xff
+        _emit 0xd6
+        _emit 0x6a
+        _emit 0x27
+        _emit 0x8b
+        _emit 0xe8
+        _emit 0xff
+        _emit 0xd6
+        _emit 0x33
+        _emit 0xc9
+        _emit 0x33
+        _emit 0xd2
+        _emit 0xf7
+        _emit 0xc7
+        _emit 0x00
+        _emit 0x80
+        _emit 0x00
+        _emit 0x00
+        _emit 0x74
+        _emit 0x07
+        _emit 0xba
+        _emit 0x20
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xeb
+        _emit 0x09
+        _emit 0x84
+        _emit 0xff
+        _emit 0x79
+        _emit 0x05
+        _emit 0xba
+        _emit 0xe0
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0xf7
+        _emit 0xc5
+        _emit 0x00
+        _emit 0x80
+        _emit 0x00
+        _emit 0x00
+        _emit 0x5d
+        _emit 0x5b
+        _emit 0x74
+        _emit 0x07
+        _emit 0xb9
+        _emit 0x20
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xeb
+        _emit 0x09
+        _emit 0x84
+        _emit 0xe4
+        _emit 0x79
+        _emit 0x05
+        _emit 0xb9
+        _emit 0xe0
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0x52
+        _emit 0x51
+        call FUN_0043a320
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x10
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x08
+        call FUN_00413300
+        _emit 0xe9
+        _emit 0x31
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0xce
+        call FUN_00413a00
+        _emit 0xe9
+        _emit 0x25
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x11
+        call dword ptr [GetKeyState]
+        _emit 0x84
+        _emit 0xe4
+        _emit 0x79
+        _emit 0x2d
+        _emit 0x83
+        _emit 0xff
+        _emit 0x41
+        _emit 0x74
+        _emit 0x11
+        _emit 0x83
+        _emit 0xff
+        _emit 0x52
+        _emit 0x75
+        _emit 0x28
+        _emit 0x8b
+        _emit 0xce
+        call FUN_00415ec0
+        _emit 0xe9
+        _emit 0x03
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        mov eax, dword ptr [DAT_004e086c]
+        _emit 0x33
+        _emit 0xc9
+        _emit 0x85
+        _emit 0xc0
+        _emit 0x0f
+        _emit 0x94
+        _emit 0xc1
+        mov dword ptr [DAT_004e086c], ecx
+        _emit 0xe9
+        _emit 0xec
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xff
+        _emit 0x52
+        _emit 0x74
+        _emit 0x15
+        _emit 0x5f
+        _emit 0x33
+        _emit 0xc0
+        _emit 0x5e
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x04
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x10
+        _emit 0xc2
+        _emit 0x08
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x8e
+        _emit 0x1c
+        _emit 0x02
+        _emit 0x00
+        _emit 0x00
+        call FUN_00453b70
+        _emit 0x85
+        _emit 0xc0
+        _emit 0x0f
+        _emit 0x84
+        _emit 0x9a
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x88
+        _emit 0xc8
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xf9
+        _emit 0xff
+        _emit 0x0f
+        _emit 0x84
+        _emit 0x8b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x40
+        _emit 0x50
+        _emit 0x51
+        _emit 0x8d
+        _emit 0x88
+        _emit 0x70
+        _emit 0x02
+        _emit 0x00
+        _emit 0x00
+        call FUN_0043dc80
+        _emit 0x8b
+        _emit 0xf0
+        _emit 0x85
+        _emit 0xf6
+        _emit 0x74
+        _emit 0x60
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x20
+        call FUN_00465cf0
+        _emit 0x8d
+        _emit 0x54
+        _emit 0x24
+        _emit 0x20
+        _emit 0x52
+        _emit 0x8b
+        _emit 0xce
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x18
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        call FUN_004443f0
+        mov ecx, dword ptr [DAT_004e2414]
+        _emit 0x8b
+        _emit 0xf0
+        call FUN_00454bb0
+        mov ecx, dword ptr [DAT_004e26f0]
+        mov eax, dword ptr [DAT_004e26fc]
+        _emit 0x8b
+        _emit 0x04
+        _emit 0x81
+        _emit 0x8b
+        _emit 0x40
+        _emit 0x34
+        mov ecx, dword ptr [DAT_004e2414]
+        _emit 0x56
+        _emit 0x50
+        _emit 0x8d
+        _emit 0x54
+        _emit 0x24
+        _emit 0x28
+        _emit 0x52
+        call FUN_004079e0
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x20
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x14
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        call FUN_00465e40
+        _emit 0xeb
+        _emit 0x3b
+        mov eax, dword ptr [DAT_004e26fc]
+        mov ecx, dword ptr [DAT_004e26f0]
+        _emit 0x8b
+        _emit 0x14
+        _emit 0x81
+        _emit 0x8b
+        _emit 0x42
+        _emit 0x34
+        _emit 0x6a
+        _emit 0x01
+        _emit 0x50
+        _emit 0xeb
+        _emit 0x15
+        mov ecx, dword ptr [DAT_004e26fc]
+        mov edx, dword ptr [DAT_004e26f0]
+        _emit 0x8b
+        _emit 0x04
+        _emit 0x8a
+        _emit 0x8b
+        _emit 0x48
+        _emit 0x34
+        _emit 0x6a
+        _emit 0x01
+        _emit 0x51
+        mov ecx, dword ptr [DAT_004e2414]
+        push OFFSET s_Nenhuma_regra__004bef78
+        call FUN_00454c50
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x0c
+        _emit 0x5f
+        _emit 0xb8
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x5e
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x10
+        _emit 0xc2
+        _emit 0x08
+        _emit 0x00
+    }
+}

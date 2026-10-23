@@ -1,0 +1,22 @@
+* text=auto eol=lf
+
+# Sources and manifests
+*.cpp      text
+*.c        text
+*.h        text
+*.py       text
+*.sh       text
+*.mk       text
+Makefile   text
+*.yml      text
+*.tsv      text
+*.txt      text
+*.rc       text
+*.java     text
+*.md       text
+
+# Binary artifacts that ARE tracked (resource blobs for rc.exe)
+*.ico      binary
+*.cur      binary
+*.res      binary
+*.bin      binary

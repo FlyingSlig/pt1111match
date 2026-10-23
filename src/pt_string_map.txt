@@ -1,0 +1,32 @@
+# String literal <-> scaffold data renames.
+#
+# The original sometimes pushes a string *literal* (reccmp shows a STRING
+# entity) and sometimes a data *array* copy of the same text (our 0999
+# scaffold, shown as DATA).  Our side must reference the same kind of symbol
+# or the operand names differ even though the bytes are identical.
+#
+# Applied by tools/patch_obj_syms.py at link time:
+#  * an undefined reference (our raw naked asm) is renamed in the object;
+#  * a reference to a literal defined in the same object (compiled STL code)
+#    has its relocation repointed to the scaffold symbol, which is added as an
+#    undefined reference (the LNK1179-safe path).
+#
+# left: symbol currently referenced   right: symbol to reference instead
+#
+# 13 std::vector<int> _Insert_n/_Xlen sites: original pushes the literal.
+?s_vector_T__too_long_004be704@@3QBEB ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
+# 5 _Tree bounds-check sites ("invalid map/set<T> iterator"): original literal.
+?s_invalid_map_set_T__iterator_004bc3c0@@3QBEB ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
+# map<int,unsigned>::_Insert: original pushes the scaffold array, our C++ uses
+# the compiler literal.
+??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@ ?s_map_set_T__too_long_004bd55c@@3QBEB
+
+# Security cookie: every raw /GS prologue loads the cookie from the original's
+# address (0x4ddb0c); in our image that address is the zero scaffold, while our
+# CRT compares against libcmt's own `__security_cookie` (0x4d8154).  Without
+# this the first raw function to return trips __report_gsfailure ("Buffer
+# overrun detected!") and exits 3.  Point the scaffold reference at the real
+# variable (same 6-byte `mov reg, [disp]` encoding).
+?DAT_004ddb0c@@3PAEA ___security_cookie
+?DAT_004cc884@@3QBEB __TI3?AVlength_error@std@@
+?DAT_004cc2d8@@3QBEB __TI3?AVout_of_range@std@@

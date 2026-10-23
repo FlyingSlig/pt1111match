@@ -1,0 +1,4 @@
+# Per-address declaration overrides for the generated stub skeleton.
+# Format: <address> <full C++ declaration>
+# Needed when Ghidra's inferred calling convention is wrong.
+0x00439360 int __stdcall FUN_00439360(int param_1, void *param_2)

@@ -1,0 +1,14 @@
+# Manual callee renames (not produced by gen_stl_callee_renames.py).
+#
+# map<int,unsigned>::_Insert calls our template instantiation `_Buynode`, but
+# the original calls its out-of-line copy at 0x429ea0 (decompiled as
+# FUN_00429ea0, which we also emit as a raw byte copy).  Repointing the call
+# makes both sides name the same callee; the code is identical.
+?_Buynode@?$_Tree@V?$_Tmap_traits@HIU?$less@H@std@@V?$allocator@U?$pair@$$CBHI@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HIU?$less@H@std@@V?$allocator@U?$pair@$$CBHI@std@@@2@$0A@@std@@@2@PAU342@00ABU?$pair@$$CBHI@2@D@Z ?FUN_00429ea0@@YAXHHHPAXE@Z
+?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@HIU?$less@H@std@@V?$allocator@U?$pair@$$CBHI@std@@@2@$0A@@std@@@std@@QAEXXZ ?FUN_00413050@@YIXPAX@Z
+# std::basic_string<char>::_Copy is supplied by the byte-exact raw block at
+# 0x401410 (src/00401410_copy.cpp).  Both the implicit instantiation and the
+# libcpmt precompiled copy must stay out of the image: the former would be
+# selected at compile time, the latter is pulled by the linker for any
+# remaining undefined reference.  Route every reference straight to the raw.
+?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IAEXII@Z ?FUN_00401410@@YIXPAXI@Z

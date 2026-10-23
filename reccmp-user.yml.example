@@ -1,0 +1,9 @@
+# Per-machine reccmp config. Copy to reccmp-user.yml and set the path to
+# YOUR copy of the original game executable (it is not distributed here):
+#
+#   cp reccmp-user.yml.example reccmp-user.yml
+#
+# tools/match.sh creates this file automatically from $PT1111_ORIG if missing.
+targets:
+  PORT1111:
+    path: /path/to/Portugal1111/Port1111.exe

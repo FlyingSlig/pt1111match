@@ -1,0 +1,356 @@
+#include "pt1111_funcs.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include <math.h>
+#include <mbstring.h>
+#include <ddraw.h>
+#include <dsound.h>
+#include "pt_aliases.h"
+
+extern const unsigned char DAT_004bd2c8[];
+extern const unsigned char DAT_004bd638[];
+extern unsigned char DAT_004d54a8[];
+extern unsigned char DAT_004d54ac[];
+extern unsigned char DAT_004d54b0[];
+extern unsigned char DAT_004e0878[];
+extern const unsigned char PTR_FUN_004be308[216];
+extern const unsigned char PTR_LAB_004be2e0[4];
+extern unsigned char DAT_004d5588[12];
+extern unsigned char DAT_004d5598[1024];
+
+
+
+
+
+// FUNCTION: PORT1111 0x0040d1f0
+__declspec(naked) int __fastcall FUN_0040d1f0(void *param_1)
+{
+    __asm {
+        _emit 0x6a
+        _emit 0xff
+        push OFFSET pt_eh_stub_004b5e4b
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x50
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x51
+        _emit 0x56
+        _emit 0x8b
+        _emit 0xf1
+        call FUN_00404900
+        _emit 0x85
+        _emit 0xc0
+        _emit 0x75
+        _emit 0x10
+        _emit 0x5e
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x04
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x10
+        _emit 0xc3
+        _emit 0x8b
+        _emit 0x46
+        _emit 0x34
+        _emit 0x8b
+        _emit 0x80
+        _emit 0x3c
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x48
+        _emit 0x83
+        _emit 0xf8
+        _emit 0x03
+        _emit 0x57
+        _emit 0x0f
+        _emit 0x87
+        _emit 0x40
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        jmp dword ptr [eax*4 + gap_0040d389 + 3]
+        _emit 0xbf
+        _emit 0x03
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x15
+        _emit 0xeb
+        _emit 0x19
+        _emit 0xbf
+        _emit 0x06
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x16
+        _emit 0xeb
+        _emit 0x10
+        _emit 0xbf
+        _emit 0x09
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x17
+        _emit 0xeb
+        _emit 0x07
+        _emit 0xbf
+        _emit 0x0c
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x18
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x04
+        call FUN_00475080
+        _emit 0x89
+        _emit 0x46
+        _emit 0x54
+        _emit 0x53
+        _emit 0x55
+        _emit 0x81
+        _emit 0x48
+        _emit 0x28
+        _emit 0x04
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x54
+        call FUN_004787e0
+        _emit 0x8b
+        _emit 0x46
+        _emit 0x54
+        _emit 0x50
+        _emit 0x57
+        _emit 0x8b
+        _emit 0xce
+        call FUN_00404580
+        _emit 0x8b
+        _emit 0xc8
+        call FUN_00479290
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x54
+        call FUN_00478920
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x54
+        _emit 0x6a
+        _emit 0x01
+        call FUN_004789b0
+        _emit 0x8b
+        _emit 0x46
+        _emit 0x54
+        _emit 0x8b
+        _emit 0x58
+        _emit 0x04
+        _emit 0x8b
+        _emit 0x68
+        _emit 0x08
+        _emit 0x6a
+        _emit 0x64
+        call pt_a_00496fa4
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x04
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x10
+        _emit 0x85
+        _emit 0xc0
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x1c
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x74
+        _emit 0x09
+        _emit 0x8b
+        _emit 0xc8
+        call FUN_0040d150
+        _emit 0xeb
+        _emit 0x02
+        _emit 0x33
+        _emit 0xc0
+        push OFFSET DAT_004bd2c8
+        _emit 0x8b
+        _emit 0xc8
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x20
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        _emit 0x89
+        _emit 0x46
+        _emit 0x58
+        call FUN_00478070
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        _emit 0x6a
+        _emit 0x01
+        _emit 0x51
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x04
+        call FUN_00477ae0
+        _emit 0x8b
+        _emit 0x56
+        _emit 0x54
+        _emit 0x8b
+        _emit 0x42
+        _emit 0x14
+        _emit 0x8b
+        _emit 0x40
+        _emit 0x04
+        _emit 0x8b
+        _emit 0x08
+        _emit 0x8b
+        _emit 0x51
+        _emit 0x0c
+        _emit 0x8b
+        _emit 0x42
+        _emit 0x0c
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        _emit 0x6a
+        _emit 0x01
+        _emit 0x6a
+        _emit 0x00
+        _emit 0x50
+        call FUN_004784c0
+        _emit 0x8b
+        _emit 0x46
+        _emit 0x58
+        _emit 0x8b
+        _emit 0x48
+        _emit 0x28
+        _emit 0x81
+        _emit 0xc9
+        _emit 0x04
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x55
+        _emit 0x89
+        _emit 0x48
+        _emit 0x28
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        _emit 0x53
+        call FUN_004786d0
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x54
+        _emit 0x8b
+        _emit 0x51
+        _emit 0x10
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        _emit 0x52
+        call FUN_00478380
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        call FUN_004787e0
+        _emit 0x8b
+        _emit 0x4e
+        _emit 0x58
+        _emit 0x6a
+        _emit 0x00
+        call FUN_00478010
+        _emit 0x8b
+        _emit 0x46
+        _emit 0x58
+        _emit 0x50
+        _emit 0x57
+        _emit 0x8b
+        _emit 0xce
+        call FUN_00404580
+        _emit 0x8b
+        _emit 0xc8
+        call FUN_00479290
+        _emit 0x5d
+        _emit 0x5b
+        _emit 0x5f
+        _emit 0xb8
+        _emit 0x01
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x5e
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x04
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x10
+        _emit 0xc3
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x0c
+        _emit 0x5f
+        _emit 0x33
+        _emit 0xc0
+        _emit 0x5e
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x83
+        _emit 0xc4
+        _emit 0x10
+        _emit 0xc3
+    }
+}

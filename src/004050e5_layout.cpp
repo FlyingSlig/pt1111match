@@ -1,0 +1,90 @@
+#include "pt1111_funcs.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include <math.h>
+#include <mbstring.h>
+#include <ddraw.h>
+#include <dsound.h>
+#include "pt_aliases.h"
+
+
+// GAP: PORT1111 0x004050e5
+__declspec(naked) void gap_004050e5(void)
+{
+    __asm {
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0x83
+        _emit 0xe9
+        _emit 0x14
+        jmp pt_a_00405370
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0x8b
+        _emit 0x41
+        _emit 0x0c
+        _emit 0x56
+        _emit 0x8b
+        _emit 0x71
+        _emit 0x10
+        _emit 0x33
+        _emit 0xd2
+        _emit 0x3b
+        _emit 0xc6
+        _emit 0x0f
+        _emit 0x95
+        _emit 0xc2
+        _emit 0x5e
+        _emit 0x8b
+        _emit 0xc2
+        _emit 0xc3
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0x83
+        _emit 0xc8
+        _emit 0xff
+        _emit 0xc3
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+        _emit 0xcc
+    }
+}

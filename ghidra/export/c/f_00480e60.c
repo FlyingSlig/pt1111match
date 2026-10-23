@@ -1,0 +1,22 @@
+// FUNCTION: PORT1111 0x00480e60
+// name: FUN_00480e60
+// sig: undefined FUN_00480e60(undefined4 * param_1)
+
+
+void __fastcall FUN_00480e60(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_FUN_004c68ec;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  param_1[4] = 0;
+  param_1[5] = 0;
+  param_1[8] = 0;
+  param_1[9] = 0;
+  param_1[10] = 0;
+  param_1[6] = 0;
+  param_1[7] = 0;
+  return;
+}
+
